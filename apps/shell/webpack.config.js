@@ -26,13 +26,10 @@ module.exports = {
       // For remotes (please adjust)
       name: "shell",
       filename: "remoteEntry.js",
-      exposes: {
-          './Component': './apps/shell/src/app/app.component.ts',
-      },
 
       // For hosts (please adjust)
       remotes: {
-        mfe1: 'mfe1@http://localhost:3000/remoteEntry.js',
+        "mfe1": "mfe1@http://localhost:3000/remoteEntry.js",
       },
 
       shared: share({

@@ -9,6 +9,10 @@ import { CategoryComponent } from '../category/category.component';
 import { ContainerComponent } from '../container/container.component';
 import { LoaderDirective } from '../loader.directive';
 import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
+import { APP_ROUTES } from './app.routes';
+import { HomeComponent } from './home/home.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,17 +20,19 @@ import { AppComponent } from './app.component';
     ContainerComponent,
     CategoryComponent,
     LoaderDirective,
+    HomeComponent
   ],
   imports: [
+    RouterModule.forRoot(APP_ROUTES),
     BrowserModule,
-    StoreModule.forRoot(
+    FormsModule,
+    /* StoreModule.forRoot(
       { movies: moviesReducer, categories: categoryReducer },
       {}
     ),
-    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    !environment.production ? StoreDevtoolsModule.instrument() : [],*/
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

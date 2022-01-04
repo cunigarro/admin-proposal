@@ -28,11 +28,11 @@ module.exports = {
       filename: 'remoteEntry.js',
       exposes: {
         './MoviesComponent': './apps/mfe1/src/app/movies/movies.component.ts',
+        './Collection': './apps/mfe1/src/app/core/core.module.ts'
       },
-
       // For hosts (please adjust)
       remotes: {
-          "shell": "shell@http://localhost:5000/remoteEntry.js",
+        "shell": "shell@http://localhost:5000/remoteEntry.js",
       },
 
       shared: share({
